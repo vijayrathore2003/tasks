@@ -26,7 +26,7 @@ function useLocalStorage(key: string, initialValue: any = null) {
         } catch (error) {
             console.error("Hook Error (useLocalStorage) : ", error)
         }
-    }, [value, key])
+    }, [value])
 
 
     return [value, setValue]
