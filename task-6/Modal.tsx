@@ -1,11 +1,18 @@
 import type React from 'react';
 import './modal.css'
 
-function Modal({ open, onClose, children }) {
+
+type propType = {
+  open: boolean, 
+  onClose: React.Dispatch<React.SetStateAction<boolean>>
+  children: React.ReactNode
+}
+
+function Modal({ open, onClose, children }: propType) {
   if (!open) return null;
 
   return (
-    <div className="modal-overlay" onClick={onClose}>
+    <div className="modal-overlay" onClick={()=> onClose}>
       <div className="modal w-fit" onClick={(e) => e.stopPropagation()}>
         {children}
       </div>
