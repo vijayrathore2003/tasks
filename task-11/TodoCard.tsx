@@ -43,7 +43,7 @@ function TodoCard() {
         }
     }
 
-    if (isAddError) return alert("Error while adding the todo")
+    if (isAddError) alert("Error while adding the todo")
 
     if (isEditSuccess) alert("Edited Successfully");
     if (isAddSuccess) alert("Added Successfully");

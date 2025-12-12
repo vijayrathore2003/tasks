@@ -4,7 +4,7 @@ export const getTodos = () => (
 )
 
 export const addTodo = (data: object) => (
-    fetch('https://dummyjson.com/todos/add', {
+    fetch('https://dummyjson.com/todos/addd', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data)

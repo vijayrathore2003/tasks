@@ -20,7 +20,7 @@ function Task7() {
     const handleChange = debounce(simpleChange, 1000);
 
     function debounce(callback: (...args: any[])=>void, delay: number){
-        let timer: number;
+        let timer: NodeJS.Timeout;
         return (...args: any[])=>{
             clearTimeout(timer);
             timer = setTimeout(() => {

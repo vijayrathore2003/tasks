@@ -11,6 +11,8 @@ const Task7 = lazy(()=> import('../task-7/Task7.tsx'))
 const Task8 = lazy(() => import('../task-8/Task8.tsx'))
 const Task10 = lazy(()=> import('../task-10/Task10.tsx'));
 const Task11 = lazy(()=> import('../task-11/Task11.tsx'));
+const Task12 = lazy(()=> import('../task-12/Task12.tsx'))
+const Task13 = lazy(()=> import('../task-13/Task13.tsx'))
 
 
 
@@ -61,15 +63,28 @@ function App() {
                 </Suspense>
             } />
 
-            <Route path='/task-10' element={
+            {/* <Route path='/task-10' element={
                 <Suspense fallback={<div>Loading...</div>}>
                     <Task10 />
                 </Suspense>
-            } />
+            } /> */}
 
             <Route path='/task-11' element={
                 <Suspense fallback={<div>Loading...</div>}>
                     <Task11 />
+                </Suspense>
+            } />
+
+            <Route path='/task-12' element={
+                <Suspense fallback={<div>Loading...</div>}>
+                    <Task12 />
+                </Suspense>
+            } />
+
+
+            <Route path='/task-13' element={
+                <Suspense fallback={<div>Loading...</div>}>
+                    <Task13 />
                 </Suspense>
             } />
 
