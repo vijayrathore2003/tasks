@@ -1,9 +1,8 @@
-import { useSelector } from "react-redux"
-import { items } from "./util"
 import type { CartType } from "./store/slices/cartSlice"
+import { useAppSelector } from "./hooks/hooks";
 
 function CheckOut() {
-    const cartItems = useSelector((state) => state.cart.items) as CartType[]
+    const cartItems = useAppSelector((state) => state.cart.items) as CartType[]
 
     let totalPrice = 0;
     cartItems.forEach((item)=>{

@@ -1,16 +1,16 @@
-import { useDispatch, useSelector } from 'react-redux'
 import Item from './Item'
 import CartItem from './CartItems'
 import { addItem, type CartType } from './store/slices/cartSlice';
 import { useCallback } from 'react';
 import Checkout from './CheckOut'
 import { items, type ItemType } from './util';
+import { useAppSelector, useAppDispatch } from './hooks/hooks';
 
 
 function Layout() {
 
-    const dispatch = useDispatch();
-    const cartItems = useSelector((state) => state.cart.items)
+    const dispatch = useAppDispatch();
+    const cartItems = useAppSelector((state) => state.cart.items)
 
 
     const handleAddToCart = useCallback((item: ItemType) => {
