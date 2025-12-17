@@ -12,7 +12,7 @@ export const tasks: Record<string, Task> = {
     "303": { id: "303", title: "Create initial data model" },
 };
 
-export const enum ListTitles {
+export enum ListTitles {
     TO_DO = "TO DO",
     IN_PROGRESS = "IN PROGRESS",
     DONE = "DONE",

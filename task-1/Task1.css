@@ -1,0 +1,67 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+
+  /* background-color: #242424; */
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  background-color: #F2F2F2;
+  color: black
+  
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5vh;
+    width: 100%;
+}
+
+.compo-1 {
+  
+  color: white;
+  text-align: center;
+  background-color: #818589;
+  height: 20vh;
+  width: 50%;
+  border: 2px solid black;
+}
+
+.compo-2 {
+  color: white;
+  font-size: larger;
+  margin-top: 2vh;
+  text-align: center;
+  background-color: #969696;
+  height: 50vh;
+  width: 50%;
+  border: 2px solid black;
+}
+
+.error-msg {
+  color: red;
+  text-align: center;
+  border: 1px solid red;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 10px;
+}
+
+.header {
+  color: black;
+  text-align: center;
+  /* border: 1px solid red; */
+  font-size: 22px;
+  font-weight: bold;
+}

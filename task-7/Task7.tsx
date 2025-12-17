@@ -29,6 +29,24 @@ function Task7() {
         }
     }
 
+    // function simpleThrottle(e: ChangeEvent<HTMLInputElement>){
+    //     console.log("calling change event handler : ", e.target.value, " at ", new Date().toLocaleTimeString());
+    // }
+
+    // const throttledChange = throttle(simpleThrottle, 1000);
+
+    // function throttle(mainFunction, delay){
+    //     let timer = null;
+    //     return (...args) => {
+    //         if(timer === null){
+    //             mainFunction(...args);
+    //             timer = setTimeout(()=>{
+    //                 timer = null;
+    //             }, delay);
+    //         }
+    //     }
+    // }
+
     return (
         <div className="w-full h-screen flex justify-center items-center flex-col">
             <div className="flex shadow p-10 rounded-2xl flex-col items-center">

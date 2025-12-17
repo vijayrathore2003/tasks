@@ -1,7 +1,11 @@
 import { lazy, Suspense } from 'react'
 import { Routes, Route } from "react-router";
 import GridUi from './GridUi.tsx'
+import RegisterForm from '../task-14/components/RegisterForm.tsx';
+import LoginForm from '../task-14/components/LoginForm.tsx';
+import Profile from '../task-14/components/Profile.tsx';
 
+const Task1 = lazy(() => import('../task-1/Task1.tsx'))
 const Task2 = lazy(() => import('../task-2/Task2.tsx'))
 const Task3 = lazy(() => import('../task-3/Task3.tsx'))
 const Task4 = lazy(() => import('../task-4/Task4.tsx'))
@@ -13,6 +17,7 @@ const Task10 = lazy(()=> import('../task-10/Task10.tsx'));
 const Task11 = lazy(()=> import('../task-11/Task11.tsx'));
 const Task12 = lazy(()=> import('../task-12/Task12.tsx'))
 const Task13 = lazy(()=> import('../task-13/Task13.tsx'))
+const Task14 = lazy(()=> import('../task-14/Task14.tsx'))
 
 
 
@@ -20,6 +25,12 @@ function App() {
     return (
         <Routes>
             <Route path='/' element={<GridUi />} />
+
+            <Route path='/task-1' element={
+                <Suspense fallback={<div>Loading...</div>}>
+                    <Task1 />
+                </Suspense>
+            } />
 
             <Route path='/task-2' element={
                 <Suspense fallback={<div>Loading...</div>}>
@@ -63,11 +74,11 @@ function App() {
                 </Suspense>
             } />
 
-            {/* <Route path='/task-10' element={
+            <Route path='/task-10' element={
                 <Suspense fallback={<div>Loading...</div>}>
                     <Task10 />
                 </Suspense>
-            } /> */}
+            } />
 
             <Route path='/task-11' element={
                 <Suspense fallback={<div>Loading...</div>}>
@@ -87,6 +98,33 @@ function App() {
                     <Task13 />
                 </Suspense>
             } />
+
+            <Route path='/task-14' element={
+                <Suspense fallback={<div>Loading...</div>}>
+                    <Task14 />
+                </Suspense>
+            } />
+
+
+            {/* loign / register routes */}
+            <Route path='/register' element={
+                <Suspense fallback={<div>Loading...</div>}>
+                    <RegisterForm />
+                </Suspense>
+            } />
+
+            <Route path='/login' element={
+                <Suspense fallback={<div>Loading...</div>}>
+                    <LoginForm />
+                </Suspense>
+            } />
+
+            <Route path='/profile' element={
+                <Suspense fallback={<div>Loading...</div>}>
+                    <Profile />
+                </Suspense>
+            } />
+            {/* loign / register routes */}
 
             
         </Routes>
