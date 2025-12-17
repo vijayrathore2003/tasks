@@ -7,9 +7,10 @@ function TodoCard() {
 
     const queryClient = useQueryClient()
 
-    const { data: Todos, isLoading: isTodosLoading, isError: TodosError } = useQuery({
+    const { data: Todos, isLoading: isTodosLoading, isError: TodosError, refetch } = useQuery({
         queryKey: ['todos'],
-        queryFn: getTodos
+        queryFn: getTodos, 
+        refetchInterval: 10000,
     })
 
     const { mutate: mutateAddTodo, isPending: isAddPending, isError: isAddError, error: AddError, isSuccess: isAddSuccess } = useMutation({
@@ -33,6 +34,10 @@ function TodoCard() {
             completed: false,
             userId: 5
         })
+    }
+
+    const handleRefetch = () => {
+        refetch();
     }
 
     const handleEdit = (action: string, info) => {
@@ -61,6 +66,7 @@ function TodoCard() {
                     <div className="flex mt-4">
                         <input className="shadow appearance-none border rounded w-full py-2 px-3 mr-4 text-grey-darker" placeholder="Add Todo" />
                         <button onClick={handleAdd} className="flex-no-shrink p-2 border-2 rounded text-teal border-teal hover:border-gray-400 hover:bg-teal">Add</button>
+                        <button onClick={handleRefetch} className="flex-no-shrink p-2 border-2 rounded text-teal border-teal hover:border-gray-400 hover:bg-teal ml-1">Refetch</button>
                     </div>
                 </div>
                 <div className="h-screen overflow-auto">
